@@ -27,6 +27,8 @@ import androidx.compose.ui.unit.dp
 import com.ramcosta.composedestinations.annotation.Destination
 import com.ramcosta.composedestinations.navigation.DestinationsNavigator
 import pack.mangaverse.R
+import pack.mangaverse.destinations.CatalogueScreenDestination
+import pack.mangaverse.destinations.LoginScreenDestination
 
 @Destination(start = true)
 @Composable
@@ -54,7 +56,7 @@ fun HomeScreen(navigator: DestinationsNavigator,modifier: Modifier =Modifier) {
             )
 
             Button(
-                onClick = {  },
+                onClick = {navigator.navigate(CatalogueScreenDestination ())},
                 modifier = Modifier.height(56.dp),
                 shape = CircleShape,
                 colors = ButtonDefaults.buttonColors(
@@ -70,7 +72,7 @@ fun HomeScreen(navigator: DestinationsNavigator,modifier: Modifier =Modifier) {
             }
 
             Button(
-                onClick = {  },
+                onClick = {  navigator.navigate(LoginScreenDestination()) },
                 modifier = Modifier.height(56.dp),
                 shape = CircleShape,
                 colors = ButtonDefaults.buttonColors(
