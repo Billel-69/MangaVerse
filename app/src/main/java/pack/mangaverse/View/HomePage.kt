@@ -28,6 +28,7 @@ import com.ramcosta.composedestinations.annotation.Destination
 import com.ramcosta.composedestinations.navigation.DestinationsNavigator
 import pack.mangaverse.R
 import pack.mangaverse.destinations.CatalogueScreenDestination
+import pack.mangaverse.destinations.ChoiceScreenDestination
 import pack.mangaverse.destinations.LoginScreenDestination
 
 @Destination(start = true)
@@ -72,7 +73,7 @@ fun HomeScreen(navigator: DestinationsNavigator,modifier: Modifier =Modifier) {
             }
 
             Button(
-                onClick = {  navigator.navigate(LoginScreenDestination()) },
+                onClick = {  navigator.navigate(ChoiceScreenDestination()) },
                 modifier = Modifier.height(56.dp),
                 shape = CircleShape,
                 colors = ButtonDefaults.buttonColors(
