@@ -4,6 +4,8 @@ plugins {
     alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.ksp)
     alias(libs.plugins.google.gms.google.services)
+    id("kotlin-parcelize") // ✅ Ajoute cette ligne
+
 }
 
 android {
@@ -67,6 +69,8 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+    implementation("io.coil-kt:coil-compose:2.4.0")
+
 }
 
 // ✅ Ce bloc doit être ici (en dehors de `dependencies`)
