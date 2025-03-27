@@ -1,5 +1,9 @@
 package pack.mangaverse.data.models
 
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+
+@Parcelize
 data class Contenu(
     var id: String,
     val titre: String,
@@ -13,7 +17,4 @@ data class Contenu(
     val coverPath: String,
     val bannerPath: String,
     val personnages: List<PersonnageRole>
-)
-
-
-
+) : Parcelable
