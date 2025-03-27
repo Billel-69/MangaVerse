@@ -14,7 +14,7 @@ import androidx.compose.ui.unit.sp
 import com.ramcosta.composedestinations.annotation.Destination
 import com.ramcosta.composedestinations.navigation.DestinationsNavigator
 import pack.mangaverse.destinations.LoginScreenDestination
-import pack.mangaverse.destinations.RegisterScreenDestination
+import pack.mangaverse.destinations.SigningUpScreenDestination
 
 @Destination
 @Composable
@@ -51,7 +51,7 @@ fun ChoiceScreen(navigator: DestinationsNavigator) {
             }
 
             Button(
-                onClick = { navigator.navigate(RegisterScreenDestination()) },
+                onClick = { navigator.navigate(SigningUpScreenDestination()) },
                 colors = ButtonDefaults.buttonColors(
                     containerColor = Color.White,
                     contentColor = Color.Black

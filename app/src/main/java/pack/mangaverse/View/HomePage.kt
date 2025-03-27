@@ -24,9 +24,14 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 import com.ramcosta.composedestinations.annotation.Destination
 import com.ramcosta.composedestinations.navigation.DestinationsNavigator
 import pack.mangaverse.R
+import pack.mangaverse.data.DataFactory
+import pack.mangaverse.data.DataManager
+import pack.mangaverse.data.models.Contenu
 import pack.mangaverse.destinations.CatalogueScreenDestination
 import pack.mangaverse.destinations.ChoiceScreenDestination
 import pack.mangaverse.destinations.LoginScreenDestination
@@ -34,8 +39,21 @@ import pack.mangaverse.destinations.LoginScreenDestination
 @Destination(start = true)
 @Composable
 fun HomeScreen(navigator: DestinationsNavigator,modifier: Modifier =Modifier) {
-    val context = LocalContext.current
+    val db = FirebaseFirestore.getInstance()
+    val df = DataFactory(db)
+    val dm = DataManager(df)
 
+    dm.updateAllLists(
+        onComplete = {
+            println("All lists have been updated successfully!")
+            println("Users: ${dm.getUtilisateurs()}")
+        },
+        onFailure = { exception ->
+            println("Error occurred: ${exception.message}")
+        }
+    )
+
+    val context = LocalContext.current
     Column(
         modifier = Modifier
             .fillMaxSize()

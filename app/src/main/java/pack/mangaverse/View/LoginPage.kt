@@ -22,7 +22,7 @@ import pack.mangaverse.destinations.HomeScreenDestination
 @Destination
 @Composable
 fun LoginScreen(
-    navigator: DestinationsNavigator, // 👈 ajout du navigator pour la navigation
+    navigator: DestinationsNavigator,
     modifier: Modifier = Modifier
 ) {
     var email by remember { mutableStateOf(TextFieldValue("")) }
@@ -91,7 +91,7 @@ fun LoginScreen(
                         .addOnCompleteListener { task ->
                             if (task.isSuccessful) {
                                 Toast.makeText(context, "Connexion réussie", Toast.LENGTH_SHORT).show()
-                                navigator.navigate(HomeScreenDestination()) // ✅ Navigation vers la HomePage
+                                navigator.navigate(HomeScreenDestination())
                             } else {
                                 Toast.makeText(
                                     context,

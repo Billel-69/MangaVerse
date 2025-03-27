@@ -20,7 +20,7 @@ import pack.mangaverse.destinations.HomeScreenDestination
 
 @Destination
 @Composable
-fun RegisterScreen(
+fun SigningUpScreen(
     navigator: DestinationsNavigator,
     modifier: Modifier = Modifier
 ) {

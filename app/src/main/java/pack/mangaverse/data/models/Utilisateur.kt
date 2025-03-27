@@ -1,8 +1,9 @@
-package pack.mangaverse.data
+package pack.mangaverse.data.models
 import java.util.Date
 
 data class Utilisateur(
-    val id: String,
+    val uid: String,
+    var id: String,
     val pseudo: String,
     val email: String,
     val mdp: String,

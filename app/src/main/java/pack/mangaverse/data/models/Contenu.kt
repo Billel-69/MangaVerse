@@ -1,6 +1,7 @@
-package pack.mangaverse.data
+package pack.mangaverse.data.models
 
 data class Contenu(
+    var id: String,
     val titre: String,
     val format: String,
     val type: String,

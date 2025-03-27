@@ -57,6 +57,7 @@ dependencies {
     implementation(libs.androidx.credentials.play.services.auth)
     implementation(libs.googleid)
     implementation(libs.compose.destinations.core)
+    implementation(libs.firebase.firestore.ktx)
 
     ksp(libs.compose.destinations.ksp)
 
@@ -69,7 +70,6 @@ dependencies {
     debugImplementation(libs.androidx.ui.test.manifest)
 }
 
-// ✅ Ce bloc doit être ici (en dehors de `dependencies`)
 ksp {
     arg("compose-destinations.codeGenPackageName", "pack.mangaverse")
 }

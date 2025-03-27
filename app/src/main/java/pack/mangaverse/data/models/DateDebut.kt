@@ -1,4 +1,4 @@
-package pack.mangaverse.data
+package pack.mangaverse.data.models
 
 data class DateDebut(
     val annee: Int,
