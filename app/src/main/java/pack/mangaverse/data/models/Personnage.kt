@@ -5,8 +5,8 @@ import kotlinx.parcelize.Parcelize
 
 @Parcelize
 data class Personnage(
-    var id: String,
-    val nom: String,
-    val imagePath: String,
-    val description: String
-) : Parcelable
+    var id: Int,
+    val name: String,
+    val image: String,
+    val description: String?
+): Parcelable

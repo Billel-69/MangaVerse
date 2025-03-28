@@ -60,6 +60,7 @@ dependencies {
     implementation(libs.googleid)
     implementation(libs.compose.destinations.core)
     implementation(libs.firebase.firestore.ktx)
+    implementation(libs.androidx.runtime.livedata)
 
     ksp(libs.compose.destinations.ksp)
 
@@ -71,6 +72,14 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
     implementation(libs.coil.compose)
+
+    implementation(libs.retrofit)
+    implementation(libs.converter.gson)
+
+    implementation(libs.glide)
+    annotationProcessor(libs.compiler)
+    implementation(libs.accompanist.flowlayout)
+
 
 }
 

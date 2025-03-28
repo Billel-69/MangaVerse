@@ -6,6 +6,7 @@ import kotlinx.parcelize.Parcelize
 @Parcelize
 data class Contenu(
     var id: String,
+    val genres: List<String>,
     val titre: String,
     val format: String,
     val type: String,

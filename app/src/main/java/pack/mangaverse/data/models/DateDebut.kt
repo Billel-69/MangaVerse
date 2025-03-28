@@ -5,7 +5,7 @@ import kotlinx.parcelize.Parcelize
 
 @Parcelize
 data class DateDebut(
-    val annee: Int,
-    val mois: Int,
-    val jour: Int
+    val year: Int?,
+    val month: Int?,
+    val day: Int?
 ) : Parcelable

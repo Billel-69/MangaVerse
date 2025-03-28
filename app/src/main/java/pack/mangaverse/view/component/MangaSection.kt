@@ -1,4 +1,4 @@
-package pack.mangaverse.View
+package pack.mangaverse.view.component
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.horizontalScroll
@@ -14,11 +14,13 @@ import androidx.compose.ui.unit.dp
 import com.ramcosta.composedestinations.navigation.DestinationsNavigator
 import kotlinx.coroutines.launch
 import pack.mangaverse.data.models.Contenu
+import pack.mangaverse.data.models.MediaDataM
+import pack.mangaverse.destinations.DetailPageDestination
 
 @Composable
 fun MangaSection(
     titreSection: String,
-    mangas: List<Contenu>,
+    mangas: List<MediaDataM>,
     navigator: DestinationsNavigator
 ) {
     val scrollState = rememberScrollState()
@@ -41,9 +43,9 @@ fun MangaSection(
             ) {
                 mangas.forEach { contenu ->
                     MangaCard(
-                        contenu = contenu,
+                        MediaData = contenu,
                         modifier = Modifier
-                            .clickable { navigator.navigate(pack.mangaverse.destinations.DetailScreenDestination(contenu)) }
+                            .clickable { navigator.navigate(DetailPageDestination(media = contenu)) }
                     )
                 }
             }

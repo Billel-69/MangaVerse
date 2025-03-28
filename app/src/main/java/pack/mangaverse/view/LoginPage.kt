@@ -1,4 +1,4 @@
-package pack.mangaverse.View
+package pack.mangaverse.view
 
 import android.widget.Toast
 import androidx.compose.foundation.background
@@ -12,16 +12,16 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.TextFieldValue
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.google.firebase.auth.FirebaseAuth
 import com.ramcosta.composedestinations.annotation.Destination
 import com.ramcosta.composedestinations.navigation.DestinationsNavigator
-import pack.mangaverse.destinations.HomeScreenDestination
+import pack.mangaverse.destinations.HomePageDestination
+import androidx.lifecycle.viewmodel.compose.viewModel
 
 @Destination
 @Composable
-fun LoginScreen(
+fun LoginPage(
     navigator: DestinationsNavigator,
     modifier: Modifier = Modifier
 ) {
@@ -91,7 +91,7 @@ fun LoginScreen(
                         .addOnCompleteListener { task ->
                             if (task.isSuccessful) {
                                 Toast.makeText(context, "Connexion réussie", Toast.LENGTH_SHORT).show()
-                                navigator.navigate(HomeScreenDestination())
+                                navigator.navigate(HomePageDestination())
                             } else {
                                 Toast.makeText(
                                     context,
@@ -109,10 +109,4 @@ fun LoginScreen(
             Text("Se connecter")
         }
     }
-}
-
-@Preview(showBackground = true)
-@Composable
-fun PreviewLoginScreen() {
-    // ⚠️ Le navigator n'est pas dispo ici, donc on ne peut pas appeler LoginScreen()
 }
